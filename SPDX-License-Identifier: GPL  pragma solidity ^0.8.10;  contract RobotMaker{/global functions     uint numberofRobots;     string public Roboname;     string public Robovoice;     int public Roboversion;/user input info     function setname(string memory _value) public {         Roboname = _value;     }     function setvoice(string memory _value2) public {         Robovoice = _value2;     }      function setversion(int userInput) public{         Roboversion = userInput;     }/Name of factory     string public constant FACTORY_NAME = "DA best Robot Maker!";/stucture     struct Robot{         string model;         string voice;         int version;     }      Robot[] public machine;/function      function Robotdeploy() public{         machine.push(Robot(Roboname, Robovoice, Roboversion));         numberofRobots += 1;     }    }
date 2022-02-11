@@ -1,0 +1,50 @@
+//SPDX-License-Identifier: GPL
+
+pragma solidity ^0.8.10;
+
+contract RobotMaker{
+
+
+    // global functions
+    uint numberofRobots;
+    string public Roboname;
+    string public Robovoice;
+    int public Roboversion;
+ 
+
+    //user input info
+    function setname(string memory _value) public {
+        Coincollectorname = _value;
+    }
+    function setvoice(string memory _value2) public {
+        Coincollectorvoice = _value2;
+    }
+
+    function setversion(int userInput) public{
+        Coincollectorversion = userInput;
+    }
+
+ 
+    // Name of factory
+    string public constant FACTORY_NAME = "the best coin collector!";
+    
+        
+    //stucture
+    struct Robot{
+        string model;
+        string voice;
+        int version;
+    }
+
+    Collector[] public machine;
+
+
+    //function
+
+    function Robotdeploy() public{
+        machine.push(Robot(Roboname, Robovoice, Roboversion));
+        numberofRobots += 1;
+    }
+
+ 
+}
